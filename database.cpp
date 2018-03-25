@@ -69,15 +69,19 @@ class guest : public users
             friend void search_record_institute(string);
             friend void view_record_company();
             friend void search_record_company(string);
+
             guest(char type)
             {
+                system("cls");
 
                 if(type=='I')
                 {
                     q:
-                    cout<<"\n\nPress (1) to view existing records"<<endl;
-                    cout<<"Press (2) to search an existing record"<<endl;
-                    cout<<"Press (3) to exit"<<endl;
+                    cout<<"\n\n\n\n";
+                    cout<<"\n\n\t\t\t\t\t\tPress (1) to view existing records"<<endl;
+                    cout<<"\t\t\t\t\t\tPress (2) to search an existing record"<<endl;
+                    cout<<"\t\t\t\t\t\tPress (3) to exit"<<endl;
+                    cout<<"\t\t\t\t\t\t\t\t";
                     cin>>choice;
                     //system("clear");
 
@@ -86,22 +90,25 @@ class guest : public users
                         case 1: view_record_institute();
                                 break;
 
-                        case 2: cout<<"Enter company code to search: ";
+                        case 2: //system("cls");
+                                cout<<"\t\t\t\t\t#####::: Enter company code to search: ";
+                                //cout<<"\t\t\t\t\t\t\t";
                                 cin>>e;
                                 search_record_institute(e);
                                 break;
                         case 3: exit(0);
                                 break;
-                        default: cout<<"Wrong Input.";
+                        default: cout<<"\t\t\t\t\tWrong Input.";
                                  goto q;
                     }
                 }
                 else if(type=='C')
                 {
                     y:
-                    cout<<"\n\nPress (1) to view existing records"<<endl;
-                    cout<<"Press (2) to search an existing record"<<endl;
-                    cout<<"Press (3) to exit"<<endl;
+                    cout<<"\n\n\n\n";
+                    cout<<"\n\n\t\t\t\t\t\tPress (1) to view existing records"<<endl;
+                    cout<<"\t\t\t\t\t\tPress (2) to search an existing record"<<endl;
+                    cout<<"\t\t\t\t\t\tPress (3) to exit"<<endl;
                     cin>>choice;
                     //system("clear");
 
