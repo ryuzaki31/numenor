@@ -470,7 +470,13 @@ void split(const std::string &s, std::vector<std::string> &elems,char delim)
 }
 
 
-//
+//-----------------------------------------------------------------------------
+
+
+
+
+//to read the datas to the institute.csv file
+
 void users :: read_file_institute()
 {
     ifstream x("institute.csv");
@@ -493,6 +499,7 @@ void users :: read_file_institute()
 
 // Read all the remaining files in the same manner. Inside ifstream, change File name. Define acceptData in other classes which you want to read from the file, and send this vector to initialize.
 }
+
 
 
 
@@ -536,7 +543,7 @@ void users :: delete_record_institute(string e, string f)
             cout<<"not found"<<endl;*/
     }
     if(flag == 0)
-        cout<<"\t\t\t\t\tNo such Institute found."<<endl;
+        cout<<"\t\t\t\t\tNo such Company found."<<endl;
 }
 
 
@@ -552,7 +559,7 @@ void users :: search_record_institute(string e)
         }
     }
     if(flag == 0)
-        cout<<"\t\t\t\t\tNo such Institute found."<<endl;
+        cout<<"\t\t\t\t\tNo such Company found."<<endl;
     getch();
     system("cls");
 }
@@ -695,7 +702,7 @@ int main()
     u.read_file_company();
     u.write_file_company();
 
-    //cout<<"ok"<<endl;
+    
     l:
     setcolor(240);
     system("cls");//_______________________________________________________
@@ -720,7 +727,7 @@ int main()
     while(1)
     {
         
-        //system("COLOR 06");
+        
         setcolor(6);
         cout<<"\n\n\n\n\n\n";
         cout<<"\t\t\t\t\t\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
@@ -740,15 +747,27 @@ int main()
         cout<<"\n\t\t\t\t\t\t                         ->";
         cin>>choice;
         
-        //system("cls");
+        
         if(choice =='A' || choice == 'a')
         {
             system("cls");
             cout<<"\n\n\n\n\n\n\n\n\n";
 
+            s1 ="";
+            char ch;
             cout<<"\t\t\t\t\t";
-            setcolor(96);cout<<"#######:: Enter authorization code: ";
-            cin>>s1;
+            cout<<"#######:: Enter authorization code: ";
+            setcolor(96);
+            
+            
+            ch = _getch();
+            while(ch != 13){//character 13 is enter
+                s1.push_back(ch);
+                cout << '#';
+                ch = _getch();
+            }
+
+            //cin>>s1;
             setcolor(6);
             //cout<<"Enter password: ";
             //cin>>s2;
@@ -764,22 +783,7 @@ int main()
                 system("cls");
                 continue;
             }
-            /*else if(s1 == "admin" && s2 != "password")
-            {
-                cout<<"Wrong password."<<endl;
-                cout<<"\n\n\npress any key to try again"<<endl;
-                getch();
-                continue;
-            }
-            else if(s1 != "admin" && s2 != "password")
-            {
-                cout<<"Wrong username and password."<<endl;
-                cout<<"\n\n\npress any key to try again"<<endl;
-                getch();
-                continue;
-            }*/
-            //cout<<"ok"<<endl;
-            //system("cls");
+            
         }
         else if(choice == 'G' || choice == 'g')
             guest g(class_choice);
